@@ -4,5 +4,5 @@ def neuron_forward(inputs: torch.Tensor, weights: torch.Tensor, bias: torch.Tens
     """
     Returns a tuple of scalar tensors: preactivation and tanh output.
     """
-    z = (inputs * weights).sum() + bias
+    z = (inputs @ weights) + bias
     return (z, z.tanh())
