@@ -4,4 +4,5 @@ def squared_error_loss_gradients(predictions: torch.Tensor, targets: torch.Tenso
     """
     Returns a scalar loss tensor and a prediction-shaped gradient tensor.
     """
-    return (predictions - targets).square().sum(), 2 * (predictions - targets)
+    errors = predictions - targets
+    return errors.square().sum(), 2 * errors
